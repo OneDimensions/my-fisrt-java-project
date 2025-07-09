@@ -5,7 +5,7 @@ public class Test {
         Teacher t = new Teacher();
         t.setSkill("java");
         t.setName("张三");
-        System.out.println(t.getName());
-        System.out.println(t.getSkill());
+        t.setSalary(10000);
+        System.out.println(t);
     }
 }

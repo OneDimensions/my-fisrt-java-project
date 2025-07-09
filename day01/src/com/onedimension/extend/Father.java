@@ -18,6 +18,13 @@ public class Father {
         System.out.println("privateMethod");
     }
 
+    @Override
+    public String toString() {
+        return "Father{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
     // 2. 缺省 只能在当前类 或者当前包的其他类中访问
     void defaultMethod() {
         System.out.println("defaultMethod");
