@@ -10,54 +10,12 @@ package com.onedimension.extend;
  * 5. 子类可以调用父类的方法
  * 6. 子类可以调用父类的构造方法
  * 7. 访问顺序 就近优先原则
- * 实例化时会先调用父类的构造方法，再调用子类的构造方法
  */
-public class Teacher extends Father {
-
-
+public class Teacher extends Father{
     /**
      * 技能
      */
     private String skill;
-
-    /**
-     * 薪资
-     */
-    private int salary;
-
-    public Teacher() {
-        // 可以用super指定调用父类的构造方法，有参或者无参
-        // 不写的话默认调用无参
-        // 如果调用的话必须写在第一行
-        super();
-    }
-
-    private Teacher(String skill, int salary) {
-        // 可以通过this关键字调用本类的构造方法
-        this(salary);
-        this.skill = skill;
-    }
-
-    private Teacher(int salary) {
-        this.salary = salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Teacher{" +
-                "skill='" + skill + '\'' +
-                ", salary=" + salary +
-                '}';
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
 
     public String getSkill() {
         return skill;
