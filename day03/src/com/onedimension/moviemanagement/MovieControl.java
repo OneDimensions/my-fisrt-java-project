@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Data
@@ -21,17 +23,45 @@ public class MovieControl implements MovieControlImp {
     }
 
     @Override
-    public Movie getMovie(String name) {
-        return null;
+    public List<Movie> getMovieByName(String name) {
+        return movies.stream().filter(m -> m.getName().equals(name)).toList();
     }
 
     @Override
     public void deleteMovieByMovie(String name) {
-
+        Iterator<Movie> iterator = movies.iterator();
+        List<Movie> deleteList = new ArrayList<>();
+        while (iterator.hasNext()) {
+            Movie movie = iterator.next();
+            if (movie.getName().equals(name)) {
+                deleteList.add(movie);
+                iterator.remove();
+            }
+        }
+        if (deleteList.isEmpty()) {
+            System.out.println("没有找到该电影");
+        } else {
+            System.out.println("删除成功:");
+            System.out.println(deleteList);
+        }
     }
 
     @Override
     public void deleteMovieByActor(String actor) {
-
+        List<Movie> deleteList = new ArrayList<>();
+        Iterator<Movie> iterator = movies.iterator();
+        while (iterator.hasNext()) {
+            Movie movie = iterator.next();
+            if (movie.getActor().equals(actor)) {
+                deleteList.add(movie);
+                iterator.remove();
+            }
+        }
+        if (deleteList.isEmpty()) {
+            System.out.println("没有找到该演员主演的电影");
+        } else {
+            System.out.println("删除成功:");
+            System.out.println(deleteList);
+        }
     }
 }

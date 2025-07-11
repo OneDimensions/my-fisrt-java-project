@@ -1,5 +1,7 @@
 package com.onedimension.moviemanagement;
 
+import java.util.List;
+
 public interface MovieControlImp {
 
     /**
@@ -13,7 +15,7 @@ public interface MovieControlImp {
      * @param name 电影名
      * @return 影片
      */
-    Movie getMovie(String  name);
+    List<Movie> getMovieByName(String  name);
 
     /**
      * 根据电影名下架影片
