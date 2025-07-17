@@ -21,7 +21,7 @@ public class FileDemo {
         // mkdir() 创建文件夹 只能创建一层文件夹
         // mkdirs() 创建多级文件夹
         // delete 删除文件或文件夹
-        System.out.println(file2.delete());
+        // System.out.println(file2.delete());
 
         // 获取某个目录下的全部一级文件名称
         File file3 = new File("static/file");
